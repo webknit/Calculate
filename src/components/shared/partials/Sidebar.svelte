@@ -3,7 +3,7 @@ import { Link } from "svelte-routing";
 export let pages;
 </script>
 
-<div class="w-full md:w-1/4 bg-white border-gray-300 border-solid border">
+<div class="w-full md:w-1/4 bg-white border-gray-300 border-solid border mb-4">
   <nav>
     {#each pages as { path, name }, i}
       <Link

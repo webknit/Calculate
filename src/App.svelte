@@ -12,7 +12,7 @@ import { pages } from "./PagesComponentsList.svelte";
 <Header />
 
 <Router url="{url}">
-  <div class="md:flex md:items-start container mx-auto mt-8 flex-1">
+  <div class="md:flex md:items-start container mx-auto mt-8 px-4 flex-1">
     <Sidebar pages="{pages}" />
     <div
       class="w-full md:w-3/4 bg-white border-gray-300 border-solid border p-4 md:ml-8"

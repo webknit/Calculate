@@ -88,6 +88,29 @@ export const pages = [
         name: "Height (ft/inch to cm)",
         id: "height",
         component: Height
+      },
+      {
+        name: "Weight",
+        id: "weight",
+        component: UnitConversionDefault,
+        unit1: "stone",
+        unit2: "kg",
+        amount1: 1,
+        units: ["stone", "kg", "pounds"],
+        sums: {
+          stone: {
+            kg: 6.35029,
+            pounds: 14
+          },
+          kg: {
+            stone: 0.157473,
+            pounds: 2.20462
+          },
+          pounds: {
+            kg: 0.453592,
+            stone: 0.0714286
+          }
+        }
       }
     ]
   },

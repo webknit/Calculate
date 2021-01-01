@@ -1,5 +1,5 @@
 <script>
-import Btn from "../shared/ui/btn.svelte";
+import Btn from "../shared/ui/Btn.svelte";
 import Input from "../shared/ui/Input.svelte";
 
 let initialAmount = 0;
@@ -21,7 +21,7 @@ function calculateCompountInterestTotal(p, t, r, n) {
 
 <form on:submit|preventDefault="{onFormSubmit}">
   <div class="md:flex md:justify-between">
-    <div class="w-full md:w-1/3 pr-2">
+    <div class="w-full md:w-1/3 md:pr-2">
       <Input
         label="Initial amount"
         id="initialAmount"
@@ -29,7 +29,7 @@ function calculateCompountInterestTotal(p, t, r, n) {
         type="number"
       />
     </div>
-    <div class="w-full md:w-1/3 px-2">
+    <div class="w-full md:w-1/3 md:px-2">
       <Input
         label="Interest rate (%)"
         id="interest"
@@ -37,7 +37,7 @@ function calculateCompountInterestTotal(p, t, r, n) {
         type="number"
       />
     </div>
-    <div class="w-full md:w-1/3 pl-2">
+    <div class="w-full md:w-1/3 md:pl-2">
       <Input
         label="Duration (years)"
         id="duration"

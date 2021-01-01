@@ -9,7 +9,7 @@ $: percentOfNumber = Math.round((number / 100) * percent);
 
 <form>
   <div class="md:flex items-end">
-    <div class="w-full md:w-1/2 pr-2">
+    <div class="w-full md:w-1/2 md:pr-2">
       <Input
         label="Percent %"
         id="percent"
@@ -17,7 +17,7 @@ $: percentOfNumber = Math.round((number / 100) * percent);
         type="number"
       />
     </div>
-    <div class="w-full md:w-1/2 px-2">
+    <div class="w-full md:w-1/2 md:pl-2">
       <Input label="Number" id="number" bind:value="{number}" type="number" />
     </div>
   </div>

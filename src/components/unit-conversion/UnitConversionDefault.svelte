@@ -5,6 +5,8 @@ import Select from "../shared/ui/Select.svelte";
 
 export let unit1, unit2, amount1, units, sums;
 
+console.log();
+
 $: total = (amount1 * sums[unit1][unit2]).toFixed(2);
 </script>
 
