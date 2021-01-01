@@ -8,6 +8,7 @@ import Percent from "./components/math/Percent.svelte";
 
 import Height from "./components/unit-conversion/Height.svelte";
 import UnitConversionDefault from "./components/unit-conversion/UnitConversionDefault.svelte";
+import PensionGoal from "./components/finance/PensionGoal.svelte";
 
 export const pages = [
   {
@@ -54,8 +55,8 @@ export const pages = [
         }
       },
       {
-        name: "Measurement",
-        id: "measurement",
+        name: "Length",
+        id: "length",
         component: UnitConversionDefault,
         unit1: "cm",
         unit2: "inches",
@@ -124,6 +125,11 @@ export const pages = [
         name: "Compound Interest",
         id: "compoundInterest",
         component: CompoundInterest
+      },
+      {
+        name: "Pension Goal",
+        id: "pensionGoal",
+        component: PensionGoal
       }
     ]
   },
@@ -134,7 +140,7 @@ export const pages = [
     component: Page,
     components: [
       {
-        name: "Percent of a number",
+        name: "% of a number",
         id: "percent-number",
         component: Percent
       }

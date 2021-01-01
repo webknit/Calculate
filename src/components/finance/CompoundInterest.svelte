@@ -1,16 +1,22 @@
 <script>
+import Answer from "../shared/ui/Answer.svelte";
+
 import Btn from "../shared/ui/Btn.svelte";
 import Input from "../shared/ui/Input.svelte";
+import Select from "../shared/ui/Select.svelte";
 
-let initialAmount = 0;
-let interest = 0;
-let duration = 0;
+let initialAmount = 1000;
+let interest = 5;
+let duration = 20;
+let compound = 12;
+let annualAddition = 500;
 
-const onFormSubmit = () => {
-  console.log(
-    calculateCompountInterestTotal(initialAmount, duration, interest, 12)
-  );
-};
+$: compountInterestTotal = calculateCompountInterestTotal(
+  initialAmount + annualAddition * duration,
+  duration,
+  interest,
+  compound
+).toFixed(2);
 
 function calculateCompountInterestTotal(p, t, r, n) {
   const amount = p * Math.pow(1 + r / (n * 100), n * t);
@@ -19,13 +25,21 @@ function calculateCompountInterestTotal(p, t, r, n) {
 }
 </script>
 
-<form on:submit|preventDefault="{onFormSubmit}">
+<p class="mb-4">Interest compounds monthly (12 times a year).</p>
+
+<form>
   <div class="md:flex md:justify-between">
     <div class="w-full md:w-1/3 md:pr-2">
       <Input
         label="Initial amount"
         id="initialAmount"
         bind:value="{initialAmount}"
+        type="number"
+      />
+      <Input
+        label="Annual Addition"
+        id="annual-addition"
+        bind:value="{annualAddition}"
         type="number"
       />
     </div>
@@ -44,18 +58,16 @@ function calculateCompountInterestTotal(p, t, r, n) {
         bind:value="{duration}"
         type="number"
       />
+      <Select
+        label="Compount (times per year)"
+        id="compound"
+        bind:value="{compound}"
+        options="{[12, 6, 4, 2, 1]}"
+      />
     </div>
   </div>
-
-  <Btn />
 </form>
 
-<hr />
-
-<div class="mt-4">
-  <ul>
-    Initial amount
-    {initialAmount}
-    <!-- <li>Total: {{ compountInterestTotal }}</li> -->
-  </ul>
-</div>
+<Answer>
+  <p>Total: {compountInterestTotal}</p>
+</Answer>

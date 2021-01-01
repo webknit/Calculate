@@ -2,6 +2,9 @@
 export let value;
 </script>
 
-<div>
-  <p class="text-purple-900 text-3xl font-bold">{value}</p>
+<div class="text-purple-900 text-3xl font-bold">
+  {#if value}
+    <p class="">{value}</p>
+  {/if}
+  <slot />
 </div>
