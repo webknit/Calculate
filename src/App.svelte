@@ -1,5 +1,4 @@
 <script>
-import { onMount } from "svelte";
 import { Router, Route } from "svelte-routing";
 import Header from "./components/shared/partials/Header.svelte";
 
@@ -7,16 +6,7 @@ import PageHome from "./pages/Home.svelte";
 import PageFinance from "./pages/Finance.svelte";
 import Sidebar from "./components/shared/partials/Sidebar.svelte";
 
-export let date;
 export let url = "";
-
-console.log("no more alerts");
-
-onMount(async () => {
-  const res = await fetch("/api/date");
-  const newDate = await res.text();
-  date = newDate;
-});
 
 function handleClick() {
   console.log("no more alerts");
