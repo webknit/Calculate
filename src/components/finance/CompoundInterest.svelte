@@ -7,12 +7,20 @@ let interest = 0;
 let duration = 0;
 
 const onFormSubmit = () => {
-  console.log("hello");
+  console.log(
+    calculateCompountInterestTotal(initialAmount, duration, interest, 12)
+  );
 };
+
+function calculateCompountInterestTotal(p, t, r, n) {
+  const amount = p * Math.pow(1 + r / (n * 100), n * t);
+  const interest = amount - p;
+  return interest;
+}
 </script>
 
-<form class="mb-4" on:submit|preventDefault="{onFormSubmit}">
-  <div class="md:flex md:justify-between mb-4">
+<form on:submit|preventDefault="{onFormSubmit}">
+  <div class="md:flex md:justify-between">
     <div class="w-full md:w-1/3 pr-2">
       <Input
         label="Initial amount"

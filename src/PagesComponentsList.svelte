@@ -2,27 +2,12 @@
 import PageHome from "./pages/Home.svelte";
 import Page from "./pages/Page.svelte";
 
-// export const pages = [
-//   {
-//     name: "Home",
-//     path: "/",
-//     component: PageHome
-//   },
-//   {
-//     name: "Finance",
-//     path: "finance",
-//     component: PageFinance
-//   },
-//   {
-//     name: "Math",
-//     path: "math",
-//     component: PageMath
-//   }
-// ];
-
 import CompoundInterest from "./components/finance/CompoundInterest.svelte";
 
 import Percent from "./components/math/Percent.svelte";
+
+import Height from "./components/unit-conversion/Height.svelte";
+import UnitConversionDefault from "./components/unit-conversion/UnitConversionDefault.svelte";
 
 export const pages = [
   {
@@ -30,6 +15,81 @@ export const pages = [
     name: "Home",
     path: "/",
     component: PageHome
+  },
+  {
+    id: "units",
+    name: "Unit conversion",
+    path: "unit-conversion",
+    component: Page,
+    components: [
+      {
+        name: "Distance",
+        id: "distance",
+        component: UnitConversionDefault,
+        unit1: "miles",
+        unit2: "km",
+        amount1: 1,
+        units: ["km", "miles", "metres", "yards"],
+        sums: {
+          miles: {
+            km: 1.609344,
+            metres: 1609.34,
+            yards: 1760
+          },
+          km: {
+            miles: 0.621371,
+            metres: 1000,
+            yards: 1093.61
+          },
+          metres: {
+            km: 0.001,
+            miles: 0.000621371,
+            yards: 1.09361
+          },
+          yards: {
+            miles: 0.000568182,
+            km: 0.0009144,
+            metres: 0.9144
+          }
+        }
+      },
+      {
+        name: "Measurement",
+        id: "measurement",
+        component: UnitConversionDefault,
+        unit1: "cm",
+        unit2: "inches",
+        amount1: 1,
+        units: ["cm", "inches", "feet", "metres"],
+        sums: {
+          cm: {
+            inches: 0.393701,
+            feet: 0.0328084,
+            metres: 0.01
+          },
+          inches: {
+            cm: 2.54,
+            feet: 0.0833333,
+            metres: 0.0254
+          },
+          feet: {
+            cm: 30.48,
+            inches: 12,
+            metres: 0.3048
+          },
+          metres: {
+            cm: 100,
+            inches: 39.3701,
+            feet: 3.28084
+          }
+        }
+      },
+      {
+        name: "Height (ft/inch to cm)",
+        id: "height",
+        component: Height
+      }
+    ]
   },
   {
     id: "finance",
@@ -51,8 +111,8 @@ export const pages = [
     component: Page,
     components: [
       {
-        name: "Percent",
-        id: "percent",
+        name: "Percent of a number",
+        id: "percent-number",
         component: Percent
       }
     ]

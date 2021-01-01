@@ -2,11 +2,11 @@
 export let items;
 </script>
 
-{#each items as { id, name }, i}
-  <nav class="flex mb-8">
+<nav class="flex mb-8">
+  {#each items as { id, name }, i}
     <a
-      class="border-gray-300 border-solid border-r pr-4"
+      class="border-gray-300 border-solid border-r pr-4 mr-4 hover:underline text-light-blue-600"
       href="#{id}"
     >{name}</a>
-  </nav>
-{/each}
+  {/each}
+</nav>
