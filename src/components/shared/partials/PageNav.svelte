@@ -1,8 +1,8 @@
 <script>
-export let items;
+  export let items;
 </script>
 
-<nav class="flex mb-8">
+<nav class="flex mb-8 text-purple-800">
   {#each items as { id, name }, i}
     <a
       class="border-gray-300 border-solid border-r pr-4 mr-4 hover:underline text-light-blue-600"
