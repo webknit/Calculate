@@ -10,6 +10,8 @@
   import UnitConversionDefault from "./components/unit-conversion/UnitConversionDefault.svelte";
   import PensionGoal from "./components/finance/PensionGoal.svelte";
 
+  import MatchedBetting from "./components/betting/MatchedBetting.svelte";
+
   export const pages = [
     {
       id: "home",
@@ -143,6 +145,19 @@
           name: "% of a number",
           id: "percent-number",
           component: Percent,
+        },
+      ],
+    },
+    {
+      id: "betting",
+      name: "Betting",
+      path: "betting",
+      component: Page,
+      components: [
+        {
+          name: "Matched betting",
+          id: "matched-betting",
+          component: MatchedBetting,
         },
       ],
     },

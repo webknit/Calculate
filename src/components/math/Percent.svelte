@@ -1,10 +1,10 @@
 <script>
-import Answer from "../shared/ui/Answer.svelte";
-import Input from "../shared/ui/Input.svelte";
+  import Answer from "../shared/ui/Answer.svelte";
+  import Input from "../shared/ui/Input.svelte";
 
-let percent = 50;
-let number = 27568;
-$: percentOfNumber = Math.round((number / 100) * percent);
+  let percent = 50;
+  let number = 27568;
+  $: percentOfNumber = Math.round((number / 100) * percent * 100) / 100;
 </script>
 
 <form>
