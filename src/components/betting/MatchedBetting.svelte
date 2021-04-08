@@ -45,18 +45,18 @@ function twoDecimal(num) {
         bind:value="{layOdds}"
         type="number"
       />
-      <Input
+      <!-- <Input
         label="Commission"
         id="commission"
         bind:value="{commission}"
         type="number"
-      />
+      /> -->
     </div>
   </div>
 </form>
 
 <p>Your lay stake is : <strong>{twoDecimal(hedgingCalculation)}</strong></p>
-<p>Liability: <strong>twoDecimal(liability)}</strong></p>
+<p>Liability: <strong>{twoDecimal(liability)}</strong></p>
 <!-- <p>Exchange balance required is: {liability}</p> -->
 <p>Profit: <strong>{twoDecimal(profit)}</strong></p>
 
