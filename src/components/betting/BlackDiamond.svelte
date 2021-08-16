@@ -22,14 +22,6 @@
 
     return Math.round((decreaseValue / oldNumber) * 100);
   }
-
-  //   $: hedgingCalculation = (backOdds * backStake) / layOdds;
-  //   $: liability = hedgingCalculation * (layOdds - 1);
-  //   $: profit = backStake * backOdds - liability - backStake;
-
-  function twoDecimal(num) {
-    return Math.round(num * 100) / 100;
-  }
 </script>
 
 <p class="mb-4">Black Diamond</p>
@@ -40,22 +32,22 @@
       <Input label="Amount" id="amount" bind:value="{amount}" type="number" />
     </div>
     <div class="w-full md:w-1/2 md:pr-2">
-      <p>Target (%/total)</p>
+      <p>Target (% amount/total)</p>
       <p>
-        1% - £{percentOfNumber(amount, 1)}
-        / £{percentOfNumber(amount, 1) + amount}
+        1%: £{percentOfNumber(amount, 1)}
+        / £{Math.round(percentOfNumber(amount, 1) + amount)}
       </p>
       <p>
-        2% - £{percentOfNumber(amount, 2)}
-        / £{percentOfNumber(amount, 2) + amount}
+        2%: £{percentOfNumber(amount, 2)}
+        / £{Math.round(percentOfNumber(amount, 2) + amount)}
       </p>
       <p>
-        3% - £{percentOfNumber(amount, 3)}
-        / £{percentOfNumber(amount, 3) + amount}
+        3%: £{percentOfNumber(amount, 3)}
+        / £{Math.round(percentOfNumber(amount, 3) + amount)}
       </p>
       <p>
-        4% - £{percentOfNumber(amount, 4)}
-        / £{percentOfNumber(amount, 4) + amount}
+        4%: £{percentOfNumber(amount, 4)}
+        / £{Math.round(percentOfNumber(amount, 4) + amount)}
       </p>
     </div>
   </div>
@@ -64,18 +56,12 @@
       <Input label="Actual" id="actual" bind:value="{actual}" type="number" />
     </div>
     <div class="w-full md:w-1/2">
-      <p>Target (%/total)</p>
+      <p>Actual (amount/total)</p>
       <p>
-        Profit/loss - £{Math.round(actual - amount)}
+        Profit/loss: £{Math.round(actual - amount)}
         /
         {getPercentageChange(amount, actual)}%
       </p>
     </div>
   </div>
 </form>
-
-<!-- <p>Your lay stake is : <strong>{twoDecimal(hedgingCalculation)}</strong></p>
-<p>Liability: <strong>{twoDecimal(liability)}</strong></p>
- <p>Exchange balance required is: {liability}</p> 
-<p>Profit: <strong>{twoDecimal(profit)}</strong></p>
--->
