@@ -11,6 +11,7 @@
   import PensionGoal from "./components/finance/PensionGoal.svelte";
 
   import MatchedBetting from "./components/betting/MatchedBetting.svelte";
+  import BlackDiamond from "./components/betting/BlackDiamond.svelte";
 
   export const pages = [
     {
@@ -154,6 +155,11 @@
       path: "betting",
       component: Page,
       components: [
+        {
+          name: "Black Diamond",
+          id: "blackDiamond",
+          component: BlackDiamond,
+        },
         {
           name: "Matched betting",
           id: "matched-betting",
