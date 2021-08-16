@@ -5,16 +5,11 @@
   import Input from "../shared/ui/Input.svelte";
   import Select from "../shared/ui/Select.svelte";
 
-  let amount = 765;
+  let amount = 865;
   let actual = 765;
 
   function percentOfNumber(amount, percent) {
-    return Math.round((amount / 100) * percent * 100) / 100;
-  }
-
-  function relDiff(a, b) {
-    // (current-new)/current*100.0;
-    return Math.round(((a - b) / a) * 100.0);
+    return ((amount / 100) * percent * 100) / 100;
   }
 
   function getPercentageChange(oldNumber, newNumber) {
@@ -34,20 +29,20 @@
     <div class="w-full md:w-1/2 md:pr-2">
       <p>Target (% amount/total)</p>
       <p>
-        1%: £{percentOfNumber(amount, 1)}
-        / £{Math.round(percentOfNumber(amount, 1) + amount)}
+        1%: £{percentOfNumber(amount, 1).toFixed(2)}
+        / £{(Number(percentOfNumber(amount, 1)) + Number(amount)).toFixed(2)}
       </p>
       <p>
-        2%: £{percentOfNumber(amount, 2)}
-        / £{Math.round(percentOfNumber(amount, 2) + amount)}
+        2%: £{percentOfNumber(amount, 2).toFixed(2)}
+        / £{(Number(percentOfNumber(amount, 2)) + Number(amount)).toFixed(2)}
       </p>
       <p>
-        3%: £{percentOfNumber(amount, 3)}
-        / £{Math.round(percentOfNumber(amount, 3) + amount)}
+        3%: £{percentOfNumber(amount, 3).toFixed(2)}
+        / £{(Number(percentOfNumber(amount, 3)) + Number(amount)).toFixed(2)}
       </p>
       <p>
-        4%: £{percentOfNumber(amount, 4)}
-        / £{Math.round(percentOfNumber(amount, 4) + amount)}
+        4%: £{percentOfNumber(amount, 4).toFixed(2)}
+        / £{(Number(percentOfNumber(amount, 4)) + Number(amount)).toFixed(2)}
       </p>
     </div>
   </div>
