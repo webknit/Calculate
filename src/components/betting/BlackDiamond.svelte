@@ -30,7 +30,7 @@
       <p>Target (% amount/total)</p>
       <p>
         1%: £{percentOfNumber(amount, 1).toFixed(2)}
-        / £{percentOfNumber(amount, 4).toFixed(2)}
+        / £{(Number(percentOfNumber(amount, 1)) + Number(amount)).toFixed(2)}
       </p>
       <p>
         2%: £{percentOfNumber(amount, 2).toFixed(2)}
@@ -44,10 +44,11 @@
         4%: £{percentOfNumber(amount, 4).toFixed(2)}
         / £{(Number(percentOfNumber(amount, 4)) + Number(amount)).toFixed(2)}
       </p>
+
       <p>
-        £{percentOfNumber(amount, 4).toFixed(2)}
+        £{percentOfNumber(amount, 1).toFixed(2)}
         - £{percentOfNumber(amount, 4).toFixed(2)}
-        / £{percentOfNumber(amount, 4).toFixed(2)}
+        / £{(Number(percentOfNumber(amount, 1)) + Number(amount)).toFixed(2)}
         - £{(Number(percentOfNumber(amount, 4)) + Number(amount)).toFixed(2)}
       </p>
     </div>
