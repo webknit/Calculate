@@ -46,7 +46,7 @@
       </p>
 
       <p>
-        £{percentOfNumber(amount, 1).toFixed(2)}-£{percentOfNumber(amount, 4).toFixed(2)}/£{(Number(percentOfNumber(amount, 1)) + Number(amount)).toFixed(2)}-£{(Number(percentOfNumber(amount, 4)) + Number(amount)).toFixed(2)}
+        £{percentOfNumber(amount, 1)}-£{percentOfNumber(amount, 4)}/£{Number(percentOfNumber(amount, 1)) + Number(amount)}-£{Number(percentOfNumber(amount, 4)) + Number(amount)}
       </p>
     </div>
   </div>
