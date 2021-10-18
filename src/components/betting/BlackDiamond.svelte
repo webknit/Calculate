@@ -46,7 +46,7 @@
       </p>
 
       <p>
-        £{percentOfNumber(amount, 1)}-£{percentOfNumber(amount, 4)}/£{Number(percentOfNumber(amount, 1)) + Number(amount)}-£{Number(percentOfNumber(amount, 4)) + Number(amount)}
+        £{Math.round(percentOfNumber(amount, 1))}-£{Math.round(percentOfNumber(amount, 4))}/£{Math.round(Number(percentOfNumber(amount, 1)) + Number(amount))}-£{Math.round(Number(percentOfNumber(amount, 4)) + Number(amount))}
       </p>
     </div>
   </div>
